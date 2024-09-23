@@ -1,0 +1,40 @@
+/* mystyle.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #26c1cb;
+    padding: 10px 0;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #087076;
+}
+/* Add animation to the navigation links */
+nav a {
+    animation: fadeInUp 0.5s ease forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

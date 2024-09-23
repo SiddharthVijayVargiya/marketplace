@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'marketplace/css/seller_product/seller_product.css' %}">
+    <title>Your Listed Mangoes</title>
+</head>
+<body>
+    <h1>Your Listed Mangoes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Variety</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mango in mangoes %}
+                <tr>
+                    <td>{{ mango.variety }}</td>
+                    <td>{{ mango.quantity }}</td>
+                    <td>
+                        <a href="{% url 'delete_mango' mango.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'marketplace' %}">Back to Marketplace</a>
+</body>
+</html>

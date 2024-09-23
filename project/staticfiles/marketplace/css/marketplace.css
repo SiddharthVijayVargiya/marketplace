@@ -1,0 +1,70 @@
+/* mystyle.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #26c1cb;
+}
+
+.user-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.user-links a {
+    color: #087076;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.user-links a:hover {
+    color: #26c1cb;
+}
+.button {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.button-yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.button-green {
+    background-color: green;
+    color: white;
+}
+.login-prompt {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #26c1cb;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #087076;
+}

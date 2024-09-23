@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Mango Mart - Seller</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            // Map initialization code
+        }
+
+        function shareLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    document.getElementById('id_location').value = position.coords.latitude + ',' + position.coords.longitude;
+                    alert("Location saved successfully!");
+                }, function(error) {
+                    alert("Error getting location: " + error.message);
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <link rel="stylesheet" href="{% static 'marketplace/css/seller/seller.css' %}">
+    <h1>List Your Mangoes for Sale</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ mango_form.as_p }}
+        {{ tree_form.as_p }}
+        <button type="button" onclick="shareLocation()">Share Location</button>
+        <button type="submit">Submit</button>
+    </form>
+    <nav>
+        <a href="{% url 'marketplace' %}">Marketplace</a>
+        <a href="{% url 'seller_products' %}">Your Listed Products</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+ 
+</body>
+</html>

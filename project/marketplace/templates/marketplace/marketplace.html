@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+    <title>Mango Mart - Marketplace</title>
+</head>
+<body>
+    <link rel="stylesheet" href="{% static 'marketplace/css/marketplace/marketplace.css' %}">
+    
+    <h1>Mango Marketplace</h1>
+    {% if user.is_authenticated %}
+
+    <a href="{% url 'seller' %}" class="button button-yellow">Seller</a>
+    <a href="{% url 'buyer' %}" class="button button-green">Buyer</a>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> to access the marketplace.</p>
+    {% endif %}
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+</body>
+</html>

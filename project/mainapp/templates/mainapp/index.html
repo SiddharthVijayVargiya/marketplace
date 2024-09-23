@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Mart - The Ultimate Mango Marketplace</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/mainapp/mainapp.css' %}">
+</head>
+<body>
+    <header id="header">
+        <div class="header-top">
+            <div class="container">
+                <p><strong>&nbsp;5% WELCOME DISCOUNT ON ALL PRODUCTS</strong></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static 'mainapp/images/logo.png' %}" alt="Mango Mart Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index'%}">Home</a></li>
+                    <li><a href="varieties.html">Mango Varieties</a></li>
+                   
+                    <li><a href="farmers.html">Farmers & Orchards</a></li>
+                    <li><a href="global.html">Global Mangoes</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="{% url 'home' %}">Marketplace</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search mangoes...">
+            </div>
+            <div class="user-cart">
+                <a href="account.html"><img src="{% static 'app/images/user-icon.png' %}" alt="User Account"></a>
+                <a href="cart.html"><img src="{% static 'app/images/cart-icon.png' %}" alt="Shopping Cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore the World of Mangoes with Mango Mart</h1>
+            <p>Discover a variety of mangoes sourced from the finest orchards across India and the globe.</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+            <a href="about.html" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="varieties">
+        <div class="container">
+            <h2>Mango Varieties</h2>
+            <div class="grid">
+                <!-- Sample Mango Card -->
+                <div class="mango-card">
+                    <img src="alphonso.jpg" alt="Alphonso Mango">
+                    <h3>Alphonso</h3>
+                    <p>Known for its rich flavor and smooth texture.</p>
+                    <a href="product.html" class="btn">Buy Now</a>
+                </div>
+                <!-- Add more mango cards here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="farmers">
+        <div class="container">
+            <h2>Featured Farmers & Orchards</h2>
+            <div class="profiles">
+                <!-- Sample Farmer Profile -->
+                <div class="farmer-profile">
+                    <img src="farmer.jpg" alt="Farmer Name">
+                    <h3>Farmer Name</h3>
+                    <p>Expert in organic mango farming with over 20 years of experience.</p>
+                    <a href="farmer-details.html" class="btn">View Profile</a>
+                </div>
+                <!-- Add more farmer profiles here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="global">
+        <div class="container">
+            <h2>Global Mangoes</h2>
+            <div class="grid">
+                <!-- Sample Global Mango Card -->
+                <div class="mango-card">
+                    <img src="thai.jpg" alt="Thai Mango">
+                    <h3>Thai Mango</h3>
+                    <p>Exotic variety with a unique flavor profile.</p>
+                    <a href="product.html" class="btn">Buy Now</a>
+                </div>
+                <!-- Add more global mango cards here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="community">
+        <div class="container">
+            <h2>Community</h2>
+            <div class="community-content">
+                <p>Showcase your homegrown mangoes and share your story with us.</p>
+                <a href="submit.html" class="btn">Submit Your Mangoes</a>
+                <a href="stories.html" class="btn">View Community Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="heritage">
+        <div class="container">
+            <h2>Mango Heritage & Education</h2>
+            <p>Learn about the rich heritage and cultural significance of mangoes.</p>
+            <a href="education.html" class="btn">Explore</a>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-content">
+                <!-- Sample Testimonial -->
+                <div class="testimonial">
+                    <p>"Mango Mart offers the best mangoes I've ever tasted! The quality is unmatched."</p>
+                    <h3>Customer Name</h3>
+                </div>
+                <!-- Add more testimonials here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="contact-info">
+                <p>Email: support@mangomart.com</p>
+                <p>Phone: +91-123-456-7890</p>
+                <div class="social-media">
+                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'mainapp/js/mainapp/scripts.js' %}"></script>
+</body>
+</html>

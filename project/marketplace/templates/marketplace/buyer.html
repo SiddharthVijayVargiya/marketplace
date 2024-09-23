@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Mango Mart - Buyer</title>
+    <link rel="stylesheet" href="{% static 'marketplace/css/buyer/buyer.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card {
+            width: 18rem;
+            margin-bottom: 20px;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Buy Mangoes</h1>
+        <form method="get" class="mt-4 mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search by country, state, city">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+        <h2>Available Mangoes</h2>
+        <div class="row">
+            {% for mango in mangoes %}
+                <div class="col-md-4">
+                    <div class="card">
+                        {% if mango.images %}
+                            <img src="{{ mango.images.url }}" class="card-img-top" alt="Mango image">
+                        {% else %}
+                            <img src="{% static 'placeholder_image.jpg' %}" class="card-img-top" alt="Placeholder image">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ mango.variety }}</h5>
+                            <p class="card-text">Quantity: {{ mango.quantity }}</p>
+                            <p class="card-text">{{ mango.taste_review }}</p>
+                            <a href="{% url 'place_order' mango.id %}" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <nav class="mt-4">
+            <a href="{% url 'marketplace' %}" class="btn btn-secondary mr-2">Marketplace</a>
+            <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+        </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
